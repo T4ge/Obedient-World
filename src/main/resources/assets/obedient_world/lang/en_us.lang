@@ -1,0 +1,8 @@
+# Config GUI strings
+
+nocaves.config.general=General Settings
+nocaves.config.terrain=Terrain Features
+nocaves.config.structures=Structure Generation
+nocaves.config.entities=Entity Spawning
+nocaves.config.ores=Custom Ore Settings
+nocaves.config.data=Custom World Generation

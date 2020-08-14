@@ -1,20 +1,13 @@
 package com.tage.obedient_world;
 
-import java.io.File;
-
-import net.minecraft.client.resources.I18n;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
 import net.minecraftforge.common.config.Config.LangKey;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ObedientWorldConfig 
 {
@@ -162,10 +155,13 @@ public class ObedientWorldConfig
     }
     
 	@Mod.EventBusSubscriber(modid = ObedientWorld.MODID)
-	private static class EventHandler {
+	private static class EventHandler
+	{
 		@SubscribeEvent
-		public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
-			if (event.getModID().equals(ObedientWorld.MODID)) {
+		public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event)
+		{
+			if (event.getModID().equals(ObedientWorld.MODID))
+			{
 				ConfigManager.sync(ObedientWorld.MODID, Config.Type.INSTANCE);
 				if (config.hasChanged())
 					config.save();

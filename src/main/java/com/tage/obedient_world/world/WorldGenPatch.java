@@ -1,46 +1,30 @@
 package com.tage.obedient_world.world;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import java.util.Map.Entry;
-
-import com.tage.obedient_world.ObedientWorldConfig;
-import com.tage.obedient_world.util.ObedientDataDefaults;
-import com.tage.obedient_world.util.ObedientHelper;
-import com.tage.obedient_world.util.ObedientDataDefaults.PlantInformation;
-
+import com.tage.obedient_world.util.ObedientData;
+import com.tage.obedient_world.util.ObedientData.PlantInformation;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCrops;
-import net.minecraft.block.BlockPumpkin;
-import net.minecraft.block.BlockStainedGlassPane;
-import net.minecraft.block.BlockStone;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkGeneratorFlat;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenPumpkin;
 import net.minecraftforge.fml.common.IWorldGenerator;
+
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Random;
 
 public class WorldGenPatch implements IWorldGenerator 
 {
 	public BlockPos chunkPos;
 	
-	//Generate flower patches
+	// Generate flower patches
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
 	{
 		final int x = chunkX * 16 + 8;
 		final int z = chunkZ * 16 + 8;
-		for(Iterator<Entry<String, PlantInformation>> it = ObedientDataDefaults.registeredPlants.entrySet().iterator(); it.hasNext();)
+		for(Iterator<Entry<String, PlantInformation>> it = ObedientData.registeredPlants.entrySet().iterator(); it.hasNext();)
 		{
 			Entry<String, PlantInformation> set = it.next();
 			if(set.getValue().dim.contains(world.provider.getDimension()))

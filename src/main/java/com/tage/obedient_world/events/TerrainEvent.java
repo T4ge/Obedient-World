@@ -2,8 +2,6 @@ package com.tage.obedient_world.events;
 
 import com.tage.obedient_world.ObedientWorldConfig;
 import com.tage.obedient_world.overrides.MapGenOverride;
-import com.tage.obedient_world.util.ObedientDataDefaults;
-
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 

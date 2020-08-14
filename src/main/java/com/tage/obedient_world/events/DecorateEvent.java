@@ -1,17 +1,10 @@
 package com.tage.obedient_world.events;
 
-import java.util.Iterator;
-import java.util.Map.Entry;
 
 import com.tage.obedient_world.ObedientWorldConfig;
-import com.tage.obedient_world.util.ObedientDataDefaults.DecorationInformation;
-
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class DecorateEvent 
 {
